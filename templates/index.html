@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h1>Ask the Chatbot</h1>
+    <form method="POST" action="/ask">
+        <input type="text" name="query" placeholder="Enter your question" required>
+        <button type="submit">Ask</button>
+    </form>
+    {% if query %}
+        <h2>Question:</h2>
+        <p>{{ query }}</p>
+        <h2>Answer:</h2>
+        <p>{{ response }}</p>
+    {% endif %}
+</body>
+</html>
